@@ -5,10 +5,20 @@ title: Halaman Utama
 
 <style>
   body {
-    background: linear-gradient(to right, #fde68a, #fca5a5);
     margin: 0;
-    padding: 20px;
-    font-family: sans-serif;
+    padding: 2rem;
+    min-height: 100vh;
+    background: linear-gradient(to right, #1f4037, #99f2c8); /* Harvey palette style */
+    color: #ffffff;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
   }
 </style>
 
