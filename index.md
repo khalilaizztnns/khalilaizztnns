@@ -1,6 +1,11 @@
+---
+layout: none
+title: Halaman Utama
+---
+
 <style>
   body {
-    background: linear-gradient(to right, #fef3c7, #fde68a); /* gradasi kuning pastel */
+    background: linear-gradient(to right, #fde68a, #fca5a5);
     margin: 0;
     padding: 20px;
     font-family: sans-serif;
