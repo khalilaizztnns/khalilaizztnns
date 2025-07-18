@@ -118,16 +118,37 @@
     }
   </style>
 </head>
+  <script>
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".navbar a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(current)) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
 <body>
 
   <!-- Navbar -->
   <div class="navbar">
-    <a href="#home" class="active">Home</a>
+    <a href="#home">Home</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
   </div>
   
-<section id="home" style="padding: 100px 80px;">
+<section id="home" style="padding: 100px 90px 0;">
   <div style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
     <div style="flex: 1; min-width: 250px;">
       <h2 style="margin-top: 0;">Hi, I'm <span style="border-bottom: 3px solid #fff; padding-bottom: 2px;">Khalila</span> Izzatunnisa</h2>
