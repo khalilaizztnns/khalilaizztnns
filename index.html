@@ -3,42 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Halaman Utama</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --moonlit-dark: #0f2027;
       --moonlit-medium: #203a43;
       --moonlit-light: #2c5364;
-      --navbar-bg: #f8f6f2;
+      --gading: #f8f6f2;
+      --text-light: #e0e0e0;
     }
 
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, var(--moonlit-dark), var(--moonlit-medium), var(--moonlit-light));
+      color: var(--text-light);
     }
 
     .navbar {
-      background-color: var(--navbar-bg);
-      padding: 15px 30px;
+      background-color: var(--gading);
       display: flex;
       justify-content: flex-end;
-      gap: 30px;
-      font-weight: 600;
+      align-items: center;
+      padding: 15px 40px;
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      z-index: 1000;
-      color: var(--moonlit-dark);
+      right: 0;
+      z-index: 999;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
     .navbar a {
       text-decoration: none;
       color: var(--moonlit-dark);
+      font-weight: 600;
+      margin-left: 30px;
       position: relative;
-      padding-bottom: 5px;
       transition: all 0.3s ease;
     }
 
@@ -46,39 +48,84 @@
     .navbar a.active::after {
       content: '';
       position: absolute;
+      bottom: -4px;
       left: 0;
-      bottom: 0;
-      height: 2px;
       width: 100%;
+      height: 2px;
       background-color: var(--moonlit-dark);
     }
 
-    .content {
-      padding: 120px 2rem 2rem; /* untuk memberi ruang di bawah navbar */
-      min-height: 100vh;
-      background: linear-gradient(to right, var(--moonlit-dark), var(--moonlit-medium), var(--moonlit-light));
-      color: #f0f0f0;
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 150px 60px 60px;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
+    .hero-text {
+      max-width: 50%;
     }
 
-    p {
-      font-size: 1.2rem;
-      font-weight: 400;
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      border-bottom: 4px solid #8e9eab;
+      display: inline-block;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .hero-image img {
+      border-radius: 50%;
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 120px 30px 30px;
+      }
+
+      .hero-text, .hero-image {
+        max-width: 100%;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+
+      .hero-text h2 {
+        font-size: 1.5rem;
+      }
+
+      .hero-image {
+        margin-top: 30px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <a href="#home">Home</a>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="#home" class="active">Home</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
-  </nav>
+  </div>
   
 <div style="display: flex; align-items: center; gap: 20px;">
   <div>
@@ -197,68 +244,64 @@
   </div>
 
 
-## Skills
-<div style="border:1px solid #ccc; padding: 10px; border-radius: 5px;">
-  <h4 style="display: flex; align-items: center; gap: 10px;">
-  <img src="images/excel.png" alt="Microsoft Excel" style="width: 35px; height: auto;">
+<section id="skills" style="padding: 60px 20px;">
+  <h2>Skills</h2>
+  
+  <div style="border:1px solid #ccc; padding: 10px; border-radius: 5px;">
+    <h4 style="display: flex; align-items: center; gap: 10px;">
+    <img src="images/excel.png" alt="Microsoft Excel" style="width: 35px; height: auto;">
   Microsoft Excel
-  </h4>
-  <ul>
-    <li>Proficient in using essential formulas such as SUM, AVERAGE, MIN, MAX, and COUNT for performing common calculations and data summaries.</li>
-    <li>Capable of applying Data Validation and Conditional Formatting to improve data clarity and ensure consistency.</li>
-    <li>Familiar with lookup and conditional functions including VLOOKUP, XLOOKUP, COUNTIFS, SUMIFS, UNIQUE, and FILTER for handling structured data.</li>
-    <li>Able to create Pivot Tables and Pivot Charts to present key insights from datasets.
-    </li>
-  </ul>
-</div>
+    </h4>
+    <ul>
+      <li>Proficient in using essential formulas such as SUM, AVERAGE, MIN, MAX, and COUNT for performing common calculations and data summaries.</li>
+      <li>Capable of applying Data Validation and Conditional Formatting to improve data clarity and ensure consistency.</li>
+      <li>Familiar with lookup and conditional functions including VLOOKUP, XLOOKUP, COUNTIFS, SUMIFS, UNIQUE, and FILTER for handling structured data.</li>
+      <li>Able to create Pivot Tables and Pivot Charts to present key insights from datasets.
+      </li>
+    </ul>
+  </div>
 
+  <br>
 
-<br>
-
-
-<div style="border:1px solid #ccc; padding: 10px; border-radius: 5px;">
-  <h4 style="display: flex; align-items: center; gap: 10px;">
-  <img src="images/sql-database-generic.png" alt="MySQL" style="width:35px; height: auto;">
+  <div style="border:1px solid #ccc; padding: 10px; border-radius: 5px;">
+    <h4 style="display: flex; align-items: center; gap: 10px;">
+    <img src="images/sql-database-generic.png" alt="MySQL" style="width:35px; height: auto;">
   SQL
-  </h4>
-  <ul>
-    <li>Familiar with basic Data Definition Language (DDL) and Data Manipulation Language (DML) operations in MySQL, including CREATE, ALTER, DROP, TRUNCATE, SELECT, INSERT INTO, UPDATE, and DELETE.</li>
-    <li>Experienced in using aggregate functions such as COUNT, SUM, AVG, MIN, and MAX for summarizing data effectively.</li>
-    <li>Able to write and optimize queries using TRIGGER and stored PROCEDURE for automated and reusable data operations.
-    </li>
-  </ul>
-</div>
+    </h4>
+    <ul>
+      <li>Familiar with basic Data Definition Language (DDL) and Data Manipulation Language (DML) operations in MySQL, including CREATE, ALTER, DROP, TRUNCATE, SELECT, INSERT INTO, UPDATE, and DELETE.</li>
+      <li>Experienced in using aggregate functions such as COUNT, SUM, AVG, MIN, and MAX for summarizing data effectively.</li>
+      <li>Able to write and optimize queries using TRIGGER and stored PROCEDURE for automated and reusable data operations.
+      </li>
+    </ul>
+  </div>
 
+  <br>
 
-<br>
-
-
-<div style="border:1px solid #ccc; padding: 10px; border-radius: 5px;">
-  <h4 style="display: flex; align-items: center; gap: 10px;">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo" style="height: 36px;">
+  <div style="border:1px solid #ccc; padding: 10px; border-radius: 5px;">
+    <h4 style="display: flex; align-items: center; gap: 10px;">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo" style="height: 36px;">
   Python
-  </h4>
-  <ul>
-    <li>Able to perform web scraping tasks, including extracting user-generated content from Google Play reviews and YouTube comments.</li>
-    <li>Proficient in data preprocessing, including handling missing values, duplicates, outliers, and performing table joins or splits as needed.</li>
-    <li>Skilled in descriptive data analysis and visualization using Pandas, Matplotlib, and Seaborn.</li>
-    <li>Experienced in preparing data for machine learning through feature engineering, scaling, encoding, and train-test splitting.</li>
-    <li>Capable of applying supervised learning models (classification and regression) and unsupervised techniques (clustering and association rule mining).</li>
-  </ul>
-</div>
+    </h4>
+    <ul>
+      <li>Able to perform web scraping tasks, including extracting user-generated content from Google Play reviews and YouTube comments.</li>
+      <li>Proficient in data preprocessing, including handling missing values, duplicates, outliers, and performing table joins or splits as needed.</li>
+      <li>Skilled in descriptive data analysis and visualization using Pandas, Matplotlib, and Seaborn.</li>
+      <li>Experienced in preparing data for machine learning through feature engineering, scaling, encoding, and train-test splitting.</li>
+      <li>Capable of applying supervised learning models (classification and regression) and unsupervised techniques (clustering and association rule mining).</li>
+    </ul>
+  </div>
 
+  <br>
 
-<br>
-
-
-<div style="border:1px solid #ccc; padding: 10px; border-radius: 5px;">
-  <h4 style="display: flex; align-items: center; gap: 10px;">
-  <img src="images/Tableau.jpg" alt="Tableau" style="width: 35px; height: auto;">
+  <div style="border:1px solid #ccc; padding: 10px; border-radius: 5px;">
+    <h4 style="display: flex; align-items: center; gap: 10px;">
+    <img src="images/Tableau.jpg" alt="Tableau" style="width: 35px; height: auto;">
   Tableau
-  </h4>
-  <ul>
-    <li>Able to create basic visualizations such as bar charts, pie charts, and line charts using Tableau Public.</li>
-    <li>Capable of customizing visual elements including labels, colors, and tooltips for clear data presentation.</li>
-    <li>Experienced in building simple dashboards by combining multiple sheets and applying cross-sheet filters for interactive user experience.</li>
-  </ul>
-</div>
+    </h4>
+    <ul>
+      <li>Able to create basic visualizations such as bar charts, pie charts, and line charts using Tableau Public.</li>
+      <li>Capable of customizing visual elements including labels, colors, and tooltips for clear data presentation.</li>
+      <li>Experienced in building simple dashboards by combining multiple sheets and applying cross-sheet filters for interactive user experience.</li>
+    </ul>
+  </div>
