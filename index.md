@@ -2,6 +2,37 @@
 layout: none
 title: Halaman Utama
 ---
+<style>
+.navbar {
+  background-color: #f8f6f2; /* Putih gading */
+  padding: 15px 30px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  position: relative;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #333;
+}
+</style>
+
 <nav>
   <a href="#projects">Projects</a>
   <a href="#skills">Skills</a>
