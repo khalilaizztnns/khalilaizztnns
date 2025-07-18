@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
-
-  <nav class="navbar">
-    <a href="#home">Home</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-  </nav>
-
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Halaman Utama</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    :root {
+      --moonlit-dark: #0f2027;
+      --moonlit-medium: #203a43;
+      --moonlit-light: #2c5364;
+      --navbar-bg: #f8f6f2;
+    }
 
     body {
       margin: 0;
-      padding: 2rem;
-      min-height: 100vh;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Moonlit Asteroid */
-      color: #ffffff;
     }
 
     .navbar {
-      background-color: #f8f6f2; /* Putih gading */
+      background-color: var(--navbar-bg);
       padding: 15px 30px;
       display: flex;
       justify-content: flex-end;
       gap: 30px;
-      font-family: Poppins, sans-serif;
       font-weight: 600;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      color: var(--moonlit-dark);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
     .navbar a {
       text-decoration: none;
-      color: #333;
+      color: var(--moonlit-dark);
       position: relative;
       padding-bottom: 5px;
       transition: all 0.3s ease;
@@ -46,7 +50,14 @@
       bottom: 0;
       height: 2px;
       width: 100%;
-      background-color: #333;
+      background-color: var(--moonlit-dark);
+    }
+
+    .content {
+      padding: 120px 2rem 2rem; /* untuk memberi ruang di bawah navbar */
+      min-height: 100vh;
+      background: linear-gradient(to right, var(--moonlit-dark), var(--moonlit-medium), var(--moonlit-light));
+      color: #f0f0f0;
     }
 
     h1 {
@@ -60,9 +71,15 @@
       font-weight: 400;
     }
   </style>
+</head>
+<body>
 
-</body>
-
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+  </nav>
+  
 <div style="display: flex; align-items: center; gap: 20px;">
   <div>
     <h2>Hi, I'm Khalila Izzatunnisa</h2>
@@ -89,7 +106,7 @@
 <section id="projects" style="padding: 60px 20px;">
   <h2>Projects</h2>
   
-  <div style="border:1px solid #ccc; padding: 10px; border-radius: 5px; background-color: #f8f6f2; color: #000;">
+  <div style="border:1px solid #ccc; padding: 10px; border-radius: 5px;">
     <h4>Application of Association Rule for Optimizing Sales Strategies in the Bakery Business</h4>
     <p>Using sales data from a bakery store, association rule analysis is applied to identify purchasing patterns and relationships between products. This analysis aims to uncover insights into customer buying behavior, such as which items are frequently bought together, in order to inform and optimize marketing strategies and promotional offers.</p>
     <a href="https://github.com/khalilaizztnns/association-rule-bakery-data" target="_blank" style="text-decoration: none;">
