@@ -4,21 +4,26 @@ title: Halaman Utama
 ---
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
   body {
     margin: 0;
     padding: 2rem;
     min-height: 100vh;
-    background: linear-gradient(to right, #1f4037, #99f2c8); /* Harvey palette style */
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Moonlit Asteroid */
     color: #ffffff;
   }
 
   h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    font-weight: 600;
   }
 
   p {
     font-size: 1.2rem;
+    font-weight: 400;
   }
 </style>
 
