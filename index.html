@@ -118,7 +118,7 @@
     }
   </style>
 </head>
-  <script>
+<script>
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".navbar a");
 
@@ -126,8 +126,10 @@
     let current = "";
 
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 100;
-      if (scrollY >= sectionTop) {
+      const sectionTop = section.offsetTop - 120; // sesuaikan dengan tinggi navbar
+      const sectionHeight = section.offsetHeight;
+
+      if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
         current = section.getAttribute("id");
       }
     });
@@ -140,6 +142,8 @@
     });
   });
 </script>
+</body>
+
 <body>
 
   <!-- Navbar -->
@@ -198,13 +202,6 @@
       <button style="padding: 6px 12px; background: #f8f8f8; color: #000; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
         <span>View on</span>
         <img src="images/github-full.png" alt="GitHub Logo" width="55" height="22" style="background: transparent;">
-      </button>
-    </a>
-    <a href="https://univindonesia-my.sharepoint.com/:x:/g/personal/khalila_izzatunnisa_office_ui_ac_id/EZFG5Y41hM5Pv_cSJAK5dhkBr75GrkxapbOCCUQQd9DfFg?e=f2iBlm" target="_blank" style="text-decoration: none;">
-      <button style="padding: 6px 12px; background: #f8f8f8; color: #000; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-        <span>View on</span>
-        <img src="images/excel-full.png" alt="Tableau Logo" width="40
-      " height="" style="background: transparent;">
       </button>
     </a>
   </div>
