@@ -1,71 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Halaman Utama</title>
-  <style>
-  .navbar {
-    background-color: #f8f6f2; /* Putih gading */
-    padding: 15px 30px;
-    display: flex;
-    justify-content: flex-end;
-    gap: 30px;
-    font-family: Poppins, sans-serif;
-    font-weight: 600;
-  }
-
-  .navbar a {
-    text-decoration: none;
-    color: #333;
-    position: relative;
-    padding-bottom: 5px;
-    transition: all 0.3s ease;
-  }
-
-  .navbar a:hover::after,
-  .navbar a.active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 100%;
-    background-color: #333;
-  }
-  </style>
-</head>
 <body>
-  
-  <nav>
+
+  <nav class="navbar">
     <a href="#home">Home</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
   </nav>
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-  body {
-    margin: 0;
-    padding: 2rem;
-    min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Moonlit Asteroid */
-    color: #ffffff;
-  }
+    body {
+      margin: 0;
+      padding: 2rem;
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Moonlit Asteroid */
+      color: #ffffff;
+    }
 
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-  }
+    .navbar {
+      background-color: #f8f6f2; /* Putih gading */
+      padding: 15px 30px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 30px;
+      font-family: Poppins, sans-serif;
+      font-weight: 600;
+    }
 
-  p {
-    font-size: 1.2rem;
-    font-weight: 400;
-  }
-</style>
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      position: relative;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar a:hover::after,
+    .navbar a.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background-color: #333;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+  </style>
+
+</body>
 
 <div style="display: flex; align-items: center; gap: 20px;">
   <div>
@@ -93,7 +89,7 @@
 <section id="projects" style="padding: 60px 20px;">
   <h2>Projects</h2>
   
-  <div style="border:1px solid #ccc; padding: 10px; border-radius: 5px; background-color: #f8f6f2;">
+  <div style="border:1px solid #ccc; padding: 10px; border-radius: 5px; background-color: #f8f6f2; color: #000;">
     <h4>Application of Association Rule for Optimizing Sales Strategies in the Bakery Business</h4>
     <p>Using sales data from a bakery store, association rule analysis is applied to identify purchasing patterns and relationships between products. This analysis aims to uncover insights into customer buying behavior, such as which items are frequently bought together, in order to inform and optimize marketing strategies and promotional offers.</p>
     <a href="https://github.com/khalilaizztnns/association-rule-bakery-data" target="_blank" style="text-decoration: none;">
