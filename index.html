@@ -1,192 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <title>Homepage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --moonlit-dark: #0f2027;
-      --moonlit-medium: #203a43;
-      --moonlit-light: #2c5364;
-      --gading: #f8f6f2;
-      --text-light: #e0e0e0;
-    }
-
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, var(--moonlit-dark), var(--moonlit-medium), var(--moonlit-light));
-      color: var(--text-light);
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #000;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      background-color: #f8f6f2;
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     .navbar {
-      background-color: var(--gading);
       display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 15px 40px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 999;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
-    .navbar a {
+    .nav-link {
       text-decoration: none;
-      color: var(--moonlit-dark);
-      font-weight: 600;
-      margin-left: 30px;
+      color: #000;
+      font-weight: 800;
       position: relative;
-      transition: all 0.3s ease;
+      padding-bottom: 5px;
     }
 
-    .navbar a:hover::after,
-    .navbar a.active::after {
-     content: '';
-     position: absolute;
-     bottom: -4px;
-     left: 0;
-     width: 100%;
-     height: 2px;
-     background-color: var(--moonlit-dark);
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      left: 0;
+      bottom: 0;
+      transition: width 0.3s ease;
     }
 
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 150px 60px 60px;
+    .nav-link:hover::after {
+      width: 100%;
     }
 
-    .hero-text {
-      max-width: 50%;
+    .nav-link.active::after {
+      width: 100%;
     }
 
-    .hero-text h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-text h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      border-bottom: 4px solid #8e9eab;
-      display: inline-block;
-    }
-
-    .hero-text p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    .hero-image img {
-      border-radius: 50%;
-      width: 280px;
-      height: 280px;
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 120px 30px 30px;
-      }
-
-      .hero-text, .hero-image {
-        max-width: 100%;
-      }
-
-      .hero-text h1 {
-        font-size: 2rem;
-      }
-
-      .hero-text h2 {
-        font-size: 1.5rem;
-      }
-
-      .hero-image {
-        margin-top: 30px;
-      }
+    section {
+      scroll-margin-top: 100px;
     }
   </style>
 </head>
-<script>
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".nav-link");
-
-  window.addEventListener("scroll", () => {
-    let current = "";
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150;
-      const sectionHeight = section.offsetHeight;
-
-      if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active");
-      }
-    });
-  });
-</script>
-</body>
-
 <body>
+  <nav>
+    <ul class="navbar">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#contacts" class="nav-link">Contacts</a></li>
+    </ul>
+  </nav>
 
-  <!-- Navbar -->
-  <div class="navbar">
-    <a href="#home" class="nav-link">Home</a>
-    <a href="#projects" class="nav-link">Projects</a>
-    <a href="#skills" class="nav-link">Skills</a>
-  </div>
-  
-<section id="home" style="padding: 100px 90px 0;">
-  <div style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
-    <div style="flex: 1; min-width: 250px;">
-      <h2 style="margin-top: 0;">Hi, I'm <span style="border-bottom: 3px solid #fff; padding-bottom: 2px;">Khalila</span> Izzatunnisa!</h2>
-      <p>
-        A highly motivated final-year Statistics student with a strong interest in data analytics,
+<section id="home" style="
+  background: linear-gradient(135deg, #0f2027);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+">
+  <div style="
+    background-color: #FAF8F0;
+    color: black;
+    padding: 100px 0; /* Hanya atas dan bawah */
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-sizing:border-box;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    margin: 0;
+  ">
+    <img src="images/formal-photo.jpg" alt="Profile Photo" 
+      style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 15px rgba(0,0,0,0.3);">
+    <div style="max-width: 600px;">
+      <h2 style="font-size: 36px; margin-bottom: 16px;">Hi, I'm <u style="text-underline-offset: 6px;">Khalila</u> Izzatunnisa!</h2>
+      <p style="font-size: 20px; line-height: 1.6;">
+        A highly motivated final-year Statistics student with a strong interest in data analytics, 
         eager to broaden hands-on experience and contribute to impactful data-driven projects.
       </p>
-      <div style="margin-top: 15px;">
-        <a href="https://www.linkedin.com/in/khalilaiztns/" target="_blank" style="margin-right: 10px;">
-          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"
-               style="width:20px; height:20px;">
-        </a>
-        <a href="mailto:khalilaizztnns@gmail.com">
-          <img src="images/gmail.png" alt="Gmail" style="width:23px; height:20px;">
-        </a>
-      </div>
-    </div>
-
-    <div style="flex-shrink: 0;">
-      <img src="images/formal-photo.jpg" alt="Profile Photo"
-           style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;">
     </div>
   </div>
 </section>
-
-<section id="projects" style="padding: 20px 20px;">
+  
+<section id="projects" style="padding: 60px 20px; color: #FAF8F0; scroll-margin-top: 0; padding-bottom: 200px;">
   <h2 style="text-align: center;">Projects</h2>
   
   <div style="border: 1px solid #ccc; border-radius: 8px; padding: 20px; max-width: 1000px; margin: 0 auto;">
     <h4>Application of Association Rule for Optimizing Sales Strategies in the Bakery Business</h4>
     <p>Using sales data from a bakery store, association rule analysis is applied to identify purchasing patterns and relationships between products. This analysis aims to uncover insights into customer buying behavior, such as which items are frequently bought together, in order to inform and optimize marketing strategies and promotional offers.</p>
     <a href="https://github.com/khalilaizztnns/association-rule-bakery-data" target="_blank" style="text-decoration: none;">
-      <button style="padding: 6px 12px; background: #f8f8f8; color: #000; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+      <button style="padding: 6px 12px; background:  #f8f8f8; color: #000; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
         <span>View on</span>
         <img src="images/github-full.png" alt="GitHub Logo" width="50" height="20" style="background: transparent;">
       </button>
@@ -247,7 +179,7 @@
 
   <br>
 
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 20px; max-width: 1000px; margin: 0 auto;">
+  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 20px; max-width: 1000px; margin: 0 auto 60px;">
     <h4>Understanding e-Paylater Usage Through Demographic Segmentation and Psychometric Analysis</h4>
     <p>Using data obtained from Mendeley Data contains information on respondents’ demographic characteristics and survey responses regarding the use of e-Paylater services. The analysis involved exploring respondent profiles based on demographic characteristics by distinguishing between users and non-users of e-Paylater, conducting validity and reliability tests to assess whether the survey items were valid and the instrument reliable, and performing user segmentation through K-Modes Clustering based on demographic attributes.</p>
     <a href="https://github.com/khalilaizztnns/analysis-online-ibb-survey" target="_blank" style="text-decoration: none;">
@@ -265,8 +197,14 @@
     </a>
   </div>
 
-
-<section id="skills" style="padding: 20px 20px;">
+<section id="skills" style="
+  width: 100%;
+  margin: 0;
+  padding: 60px 20px;
+  color: #FAF8F0;
+  position: relative;
+  scroll-margin-top: 0;
+">
   <h2 style="text-align: center;">Skills</h2>
   
   <div style="border: 1px solid #ccc; border-radius: 8px; padding: 20px; max-width: 1000px; margin: 0 auto;">
@@ -316,7 +254,7 @@
 
   <br>
 
-  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 20px; max-width: 1000px; margin: 0 auto;">
+  <div style="border: 1px solid #ccc; border-radius: 8px; padding: 20px; max-width: 1000px; margin: 0 auto 40px;">
     <h4 style="display: flex; align-items: center; gap: 10px;">
     <img src="images/Tableau.jpg" alt="Tableau" style="width: 35px; height: auto;">
   Tableau
@@ -327,3 +265,79 @@
       <li>Experienced in building simple dashboards by combining multiple sheets and applying cross-sheet filters for interactive user experience.</li>
     </ul>
   </div>
+
+
+<section id="contacts" style="
+  background-color: transparent;
+  color: #000;
+  scroll-margin-top: 0;
+  padding: 0;
+  margin: 0;
+">
+
+  <div style="height: 100px;"></div>
+
+  <div style="
+    background-color: #FAF8F0;
+    border-radius: 50px;
+    padding: 60px 30px;
+    margin: 0 auto;
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    box-sizing: border-box;
+    min-height: 200px;
+  ">
+    <div style="
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    ">
+    <h2 style="font-size: 28px; margin: 0;">Contacts</h2>
+
+    <a href="https://www.linkedin.com/in/khalilaiztns/" target="_blank" style="color: inherit; text-decoration: none;">
+      <div style="display: flex; align-items: center; gap: 12px; font-size: 16px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 20px; height: 20px;">
+        <span>linkedin.com/in/khalilaiztns</span>
+      </div>
+    </a>
+
+    <a href="mailto:khalilaizztnns@gmail.com" style="color: inherit; text-decoration: none;">
+      <div style="display: flex; align-items: center; gap: 12px; font-size: 16px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Gmail" style="width: 20px; height: 20px;">
+        <span>khalilaizztnns@gmail.com</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<script>
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  function getCurrentSection() {
+    let current = "";
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 1 && rect.bottom >= 1) {
+        current = section.id;
+      }
+    });
+    return current;
+  }
+
+  window.addEventListener("scroll", () => {
+    const current = getCurrentSection();
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
